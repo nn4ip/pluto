@@ -1,7 +1,20 @@
 # Install with GLPK
 
 
+## 0 Dependencies
+
+On Ubuntu 18.04:
+
+```
+sudo apt install llvm-dev llvm-6.0-tools libclang-dev
+sudo apt install texinfo texlive-full
+sudo apt install cmake autoconf automake libtool libgmp3-dev bison flex
+```
+
+
 ## 1 Link FileCheck
+
+```
 mkdir -p ~/opt/FileCheck/bin
 ln -s /usr/lib/llvm-6.0/bin/FileCheck ~/opt/FileCheck/bin/FileCheck
 
