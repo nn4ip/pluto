@@ -1,24 +1,13 @@
 # Install with GLPK
 
-## 1 Install LLVM/Clang from source
 
-Official guide:
-- LLVM: https://llvm.org/docs/GettingStarted.html#id5
-- Clang: https://clang.llvm.org/get_started.html
-
-```
-git clone https://github.com/llvm/llvm-project.git
-cd llvm-project
-mkdir build
-cd build
-cmake -G 'Unix Makefiles' -DLLVM_ENABLE_PROJECTS=clang -DCMAKE_INSTALL_PREFIX=$HOME/opt/llvm ../llvm
-make -j8
-make install
-```
+## 1 Link FileCheck
+mkdir -p ~/opt/FileCheck/bin
+ln -s /usr/lib/llvm-6.0/bin/FileCheck ~/opt/FileCheck/bin/FileCheck
 
 In ~/.bashrc:
 ```
-export PATH="$HOME/opt/llvm/bin:$PATH"
+export PATH="$HOME/opt/FileCheck/bin:$PATH"
 ```
 
 
@@ -54,8 +43,6 @@ cd pluto
 git submodule init
 git submodule update
 ./autogen.sh
-export LDFLAGS=-L$HOME/opt/llvm/lib
-export LIBS=-lclang-cpp
-./configure --prefix=$HOME/opt/pluto --enable-glpk --with-glpk-prefix=$HOME/opt/glpk --with-clang-prefix=$HOME/opt/llvm --enable-debug
+./configure --prefix=$HOME/opt/pluto --enable-glpk --with-glpk-prefix=$HOME/opt/glpk
 make -j32
 ```
