@@ -17,6 +17,7 @@ sudo apt install cmake autoconf automake libtool libgmp3-dev bison flex
 ```
 mkdir -p ~/opt/FileCheck/bin
 ln -s /usr/lib/llvm-6.0/bin/FileCheck ~/opt/FileCheck/bin/FileCheck
+```
 
 In ~/.bashrc:
 ```
@@ -58,4 +59,10 @@ git submodule update
 ./autogen.sh
 ./configure --prefix=$HOME/opt/pluto --enable-glpk --with-glpk-prefix=$HOME/opt/glpk
 make -j32
+make install
+```
+
+In ~/.bashrc:
+```
+export PATH="$HOME/opt/pluto/bin:$PATH"
 ```
