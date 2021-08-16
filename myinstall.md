@@ -54,6 +54,8 @@ cd pluto
 git submodule init
 git submodule update
 ./autogen.sh
-./configure --prefix=$HOME/opt/pluto --enable-glpk --with-glpk-prefix=$HOME/opt/glpk --with-clang-prefix=$HOME/opt/llvm
+export LDFLAGS=-L$HOME/opt/llvm/lib
+export LIBS=-lclang-cpp
+./configure --prefix=$HOME/opt/pluto --enable-glpk --with-glpk-prefix=$HOME/opt/glpk --with-clang-prefix=$HOME/opt/llvm --enable-debug
 make -j32
 ```
