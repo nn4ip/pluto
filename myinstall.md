@@ -14,6 +14,8 @@ sudo apt install cmake autoconf automake libtool libgmp3-dev bison flex
 
 ## 1 Link FileCheck
 
+In fact, the FileCheck executable is "FileCheck-6.0" in /usr/bin.
+
 ```
 mkdir -p ~/opt/FileCheck/bin
 ln -s /usr/lib/llvm-6.0/bin/FileCheck ~/opt/FileCheck/bin/FileCheck
